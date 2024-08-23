@@ -172,3 +172,19 @@ class ThreadTask implements Runnable {
         System.out.println("Thread running is ------------> " + Thread.currentThread().getName());
     }
 }
+
+
+---------------------------------------
+
+UseCase for BiFunction:
+    static BiFunction<String,String,String> createQuery = (tableName, condition) ->
+            "SELECT * FROM " + tableName + " WHERE " + condition;
+
+    public  static void main(String args[]){
+
+        String query =
+                createQuery.apply("User",">30");
+
+        System.out.println(" Query is: " + query);
+
+    }
