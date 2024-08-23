@@ -1,0 +1,13 @@
+Java 11 Features:
+
+// Write Sting using Files I/O
+
+        String str = "JD\nJD\nJD";
+
+        System.out.println(">>>>> " + str.lines().collect(Collectors.toList()));
+
+        Path path = Files.writeString(Files.createTempFile("test",".txt"),"Sample data..");
+        System.out.println(" writing: " + path);
+
+        String s = Files.readString(path);
+        System.out.println("  " + s);
